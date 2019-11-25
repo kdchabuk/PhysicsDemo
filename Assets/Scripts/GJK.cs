@@ -163,6 +163,11 @@ namespace GJK
         public static float3 epa(List<float3> setA, List<float3> setB, List<float3> vertices)
         {
             // expects a 4-simplex that encloses the origin; invalid otherwise
+            if (vertices.Count != 4)
+            {
+                Debug.Log("epa requires a 4-simplex");
+                return float.NaN;
+            }
             var triangles = new List<int>() {3, 2, 1, 3, 1, 0, 3, 0, 2, 0, 1, 2};
             var normals = new List<float3>(8);
             var distances = new List<float>(8);
@@ -357,6 +362,11 @@ namespace GJK
                 }
                 
             }
+
+            // those marked for removal are -1; adjust other indexes first
+            // No changes to vertices so that triangle's indexes don't need modification
+            // TODO find more efficient method?
+            triangles.RemoveAll(i => i < 0);
 
         }
 
