@@ -61,7 +61,7 @@ public class GJKDemo : MonoBehaviour
         // translate vertices back to origin, so they're relative to the object
         var colliding = FindCollidingVertices(verticesB.Select(v => v - (float3)objectB.transform.position).ToList(), penvec);
         
-        output.text += "Vertices on collision side of the plane normal to penetration vector:\n";
+        output.text += "Vertices on sphere that are colliding:\n";
         foreach (var v in colliding)
         {
             output.text += v + ",\n";
