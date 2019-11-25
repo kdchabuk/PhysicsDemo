@@ -113,12 +113,11 @@ public class Spaceship : MonoBehaviour
         var nextAngularMomentum = angularMomentum + torqueExt * deltaTime;
 
         
-        // ideally compute exact rotation corresponding to next angular velocity from
         // momentum equation L = I(t) * w(t) = R * I * R^-1 * w(t)
         
         // basic method; energy errors at higher angular velocity
         var nextAngularVelocity = AngularVelocity(nextAngularMomentum);
-        rotation = math.mul(quaternion.Euler(nextAngularVelocity * deltaTime), rotation);
+        rotation = math.normalize(math.mul(quaternion.Euler(nextAngularVelocity * deltaTime), rotation));
         
 
         position = position + nextVelocity * deltaTime;
