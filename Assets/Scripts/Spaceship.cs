@@ -117,8 +117,10 @@ public class Spaceship : MonoBehaviour
         
         // basic method; energy errors at higher angular velocity
         var nextAngularVelocity = AngularVelocity(nextAngularMomentum);
-        rotation = math.normalize(math.mul(quaternion.Euler(nextAngularVelocity * deltaTime), rotation));
-        
+        var q = quaternion.AxisAngle(math.normalizesafe(nextAngularVelocity, new float3(0)),
+            deltaTime * math.length(nextAngularVelocity));
+        rotation = math.normalize(math.mul(q, rotation));
+
 
         position = position + nextVelocity * deltaTime;
         velocity = nextVelocity;
