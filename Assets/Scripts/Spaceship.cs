@@ -81,6 +81,9 @@ public class Spaceship : MonoBehaviour
         {
             lastEnergyLogged = float.NaN;
         }
+        
+        transform.position = position;
+        transform.rotation = rotation;
 
         velocityHUD.text = "Velocity: " + math.round(velocity * 100)/100;
         angularHUD.text = "Angular momentum: " + math.round(angularMomentum *100)/100;
@@ -88,9 +91,6 @@ public class Spaceship : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = position;
-        transform.rotation = rotation;
-
         if (cameraFollow)
             Camera.main.transform.localPosition = position + new float3(0, 1, -10);
     }

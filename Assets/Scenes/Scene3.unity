@@ -4097,9 +4097,9 @@ MonoBehaviour:
   length: 3
   width: 1
   height: 1
-  mass: 1
+  mass: 2
   thrusterAttachmentPoint: {x: 1, y: 0, z: 0}
-  thrustVector: {x: 0, y: 0, z: 2}
+  thrustVector: {x: 0, y: 0, z: 1}
 --- !u!23 &1875695599
 MeshRenderer:
   m_ObjectHideFlags: 0
