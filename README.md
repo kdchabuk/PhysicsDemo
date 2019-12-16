@@ -4,11 +4,11 @@ Scene1: center of mass
 
 Scene2: sphere collisions 
 
-![Image of scene2](/images/scene2.png)
+![Image of scene2](/images/scene2.gif)
 
 Scene3: rigid-body rotation
 
-![Image of scene3](/images/scene3.png)
+![Image of scene3](/images/scene3.gif)
 
 Scene4: contact manifold
 
