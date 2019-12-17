@@ -12,5 +12,5 @@ Scene3: rigid-body rotation
 
 Scene4: contact manifold
 
-![Image of scene4](/images/scene4.png)
+![Image of scene4](/images/scene4.gif)
 
